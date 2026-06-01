@@ -36,3 +36,28 @@ The following libraries are required to compile the project in the Arduino IDE:
 1. Clone the repository:
    ```bash
    git clone [https://github.com/RuslanBaatyrbekov/esp32-smart-alarm.git](https://github.com/RuslanBaatyrbekov/esp32-smart-alarm.git)
+
+   
+Open the project in the Arduino IDE.
+
+Add your German vocabulary dictionary to the words.h file (using the Word structure format).
+
+Configure your Wi-Fi credentials in the setup() function:
+
+C++
+wifiMulti.addAP("YOUR_SSID", "YOUR_PASSWORD");
+Flash the ESP32.
+
+Access the web interface via the device's IP address, sync the time, and set your alarms!
+
+📸 Interface
+The project includes a responsive Dark-Mode web interface served directly from the ESP32. It allows you to easily configure days of the week, sunrise settings, and melodies from any device.
+
+Developed for personal use and to explore IoT capabilities with the ESP32.
+
+<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/776719ba-2c34-4544-9769-c9aacfcef627" />
+<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/a929fffb-74a0-4db0-b26d-5c019abb2fcc" />
+<img width="721" height="1280" alt="image" src="https://github.com/user-attachments/assets/0aeced12-f1e5-4500-82fa-c868fdb0c974" />
+<img width="1280" height="994" alt="image" src="https://github.com/user-attachments/assets/0c3efc99-17d4-44af-8482-94735591d41d" />
+
+
