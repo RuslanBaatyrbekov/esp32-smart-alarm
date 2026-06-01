@@ -4,35 +4,35 @@
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-Умный будильник на базе микроконтроллера ESP32 с веб-интерфейсом, OLED-дисплеем, MP3-плеером, имитацией рассвета и функцией изучения немецких слов.
+A smart alarm clock based on the ESP32 microcontroller featuring a web interface, OLED display, MP3 player, sunrise simulation, and a German vocabulary learning function.
 
-## 🌟 Возможности (Features)
-* 🌐 **Веб-интерфейс**: Управление будильниками и синхронизация времени прямо из браузера (доступ по IP или `http://alarm.local`).
-* 🌤️ **Авто-погода и Локация**: Часы сами определяют свое местоположение по IP-адресу и подтягивают актуальную погоду и скорость ветра через *Open-Meteo API*.
-* 🎵 **MP3 Будильник**: Воспроизведение треков с флешки через модуль JQ6500 (настройка до 5 разных будильников на разные дни недели с выбором мелодии).
-* 🌅 **Имитация Рассвета**: Управление реле (220V) для автоматического включения прикроватной лампы во время звонка.
-* 🇩🇪 **Изучение слов**: При срабатывании будильника на экране появляется случайное немецкое слово с переводом и уровнем сложности для запоминания.
-* 🌗 **Умная яркость**: Плавное изменение яркости дисплея (рассвет/закат) и ночной режим с пониженным энергопотреблением.
-* 💾 **Энергонезависимая память**: Все настройки будильников сохраняются во flash-памяти и не стираются при отключении питания (Powerbank).
-* 🔄 **OTA Обновления**: Поддержка прошивки "по воздуху" (через Wi-Fi) без подключения USB-кабеля.
+## 🌟 Features
+* 🌐 **Web Interface**: Manage alarms and synchronize time directly from your browser (accessible via IP or `http://alarm.local`).
+* 🌤️ **Auto-Weather & Location**: The clock automatically detects its physical location via IP address and fetches current weather and wind speed using the *Open-Meteo API*.
+* 🎵 **MP3 Alarm**: Plays tracks from a flash drive via the JQ6500 module (configure up to 5 different alarms for specific days of the week with selectable melodies).
+* 🌅 **Sunrise Simulation**: Controls a 5V relay (220V) to automatically turn on a bedside lamp when the alarm rings.
+* 🇩🇪 **Language Learning**: When the alarm goes off, a random German word with its translation and difficulty level appears on the screen to help you memorize it.
+* 🌗 **Smart Brightness**: Smooth display brightness transitions (sunrise/sunset) and a low-power night mode to prevent OLED coil whine.
+* 💾 **Non-Volatile Memory**: All alarm settings are safely stored in the ESP32 flash memory and persist even after power loss (e.g., when running on a Powerbank).
+* 🔄 **OTA Updates**: Supports Over-The-Air firmware updates via Wi-Fi without needing a USB cable.
 
-## 🛠️ Оборудование (Hardware)
-* **ESP32** (модуль управления)
-* **OLED Дисплей** 1.3" / 0.96" (I2C, SSD1306 / SH1106)
-* **DS3231** (Модуль реального времени - RTC)
-* **JQ6500** (MP3-модуль с последовательным портом)
-* **Реле 5V** (с опторазвязкой, для управления светом)
-* Тактовая кнопка (для отключения будильника)
+## 🛠️ Hardware
+* **ESP32** (Main controller)
+* **OLED Display** 1.3" / 0.96" (I2C, SSD1306 / SH1106)
+* **DS3231** (Real-Time Clock module)
+* **JQ6500** (MP3 module with serial interface)
+* **5V Relay** (with optocoupler, for bedside light control)
+* Push button (to stop the alarm)
 
-## 📦 Зависимости (Libraries)
-Для компиляции проекта в Arduino IDE потребуются следующие библиотеки:
-* `WiFi`, `WebServer`, `HTTPClient`, `ESPmDNS`, `Preferences` (Встроены в ядро ESP32)
-* [U8g2](https://github.com/olikraus/u8g2) (для OLED дисплея)
-* [RTClib](https://github.com/adafruit/RTClib) (для модуля времени DS3231)
-* [ArduinoJson](https://github.com/bblanchon/ArduinoJson) (для парсинга погоды и API)
-* [JQ6500_Serial](https://github.com/sleemanj/JQ6500_Serial) (для аудио модуля)
+## 📦 Dependencies
+The following libraries are required to compile the project in the Arduino IDE:
+* `WiFi`, `WebServer`, `HTTPClient`, `ESPmDNS`, `Preferences` (Built into the ESP32 core)
+* [U8g2](https://github.com/olikraus/u8g2) (For OLED display)
+* [RTClib](https://github.com/adafruit/RTClib) (For the DS3231 RTC module)
+* [ArduinoJson](https://github.com/bblanchon/ArduinoJson) (For parsing weather and API data)
+* [JQ6500_Serial](https://github.com/sleemanj/JQ6500_Serial) (For the audio module)
 
-## 🚀 Установка и запуск
-1. Склонируйте репозиторий:
+## 🚀 Installation & Setup
+1. Clone the repository:
    ```bash
    git clone [https://github.com/RuslanBaatyrbekov/esp32-smart-alarm.git](https://github.com/RuslanBaatyrbekov/esp32-smart-alarm.git)
