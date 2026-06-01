@@ -21,6 +21,7 @@ A smart alarm clock based on the ESP32 microcontroller featuring a web interface
 * **OLED Display** 1.3" / 0.96" (I2C, SSD1306 / SH1106)
 * **DS3231** (Real-Time Clock module)
 * **JQ6500** (MP3 module with serial interface)
+* **Speaker** (8Ω / 3W, connected directly to the JQ6500 built-in amplifier)
 * **5V Relay** (with optocoupler, for bedside light control)
 * Push button (to stop the alarm)
 
