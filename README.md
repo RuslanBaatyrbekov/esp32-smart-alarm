@@ -4,34 +4,47 @@
 ![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
-A smart alarm clock based on the ESP32 microcontroller featuring a web interface, OLED display, MP3 player, sunrise simulation, and a German vocabulary learning function.
+A feature-rich smart alarm clock powered by an ESP32 microcontroller, featuring a responsive dark-mode web interface, OLED display, MP3 player, sunrise simulation, train schedule integration, and a German vocabulary learning function.
 
 ## 🌟 Features
-* 🌐 **Web Interface**: Manage alarms and synchronize time directly from your browser (accessible via IP or `http://alarm.local`).
-* 🌤️ **Auto-Weather & Location**: The clock automatically detects its physical location via IP address and fetches current weather and wind speed using the *Open-Meteo API*.
-* 🎵 **MP3 Alarm**: Plays tracks from a flash drive via the JQ6500 module (configure up to 5 different alarms for specific days of the week with selectable melodies).
-* 🌅 **Sunrise Simulation**: Controls a 5V relay (220V) to automatically turn on a bedside lamp when the alarm rings.
-* 🇩🇪 **Language Learning**: When the alarm goes off, a random German word with its translation and difficulty level appears on the screen to help you memorize it.
-* 🌗 **Smart Brightness**: Smooth display brightness transitions (sunrise/sunset) and a low-power night mode to prevent OLED coil whine.
-* 💾 **Non-Volatile Memory**: All alarm settings are safely stored in the ESP32 flash memory and persist even after power loss (e.g., when running on a Powerbank).
-* 🔄 **OTA Updates**: Supports Over-The-Air firmware updates via Wi-Fi without needing a USB cable.
 
-## 🛠️ Hardware
+* **🌐 Web Interface:** Manage alarms, synchronize time, toggle the bedside lamp, display custom messages, and trigger schedules directly from your browser (accessible via IP or `http://alarm.local`).
+* **🚆 Train Schedule Integration:** Fetch and display live train schedules from a local server endpoint, with manual "Show Now" / "Hide" controls and a master enable/disable toggle.
+* **💬 Custom Screen Messaging:** Send text messages directly from the web admin panel to the OLED screen with automatic multi-line UTF-8 wrapping.
+* **💡 Manual Lamp Control:** Press the physical button when the alarm is not ringing to manually toggle the bedside lamp (relays state syncs with the web interface).
+* **🌤️ Auto-Weather & Location:** Automatically detects physical location via IP and fetches current weather/wind speed using the Open-Meteo API.
+* **🎵 MP3 Alarm:** Plays tracks from a flash drive via the JQ6500 module (configure up to 5 different alarms for specific weekdays with selectable melodies).
+* **📈 Volume Stair-Step:** Gradually increases alarm volume across stages (30% $\rightarrow$ 60% $\rightarrow$ 100%) for a comfortable wake-up experience.
+* **🌅 Sunrise Simulation:** Controls a 5V relay to automatically turn on a bedside lamp when the alarm triggers.
+* **🇩🇪 Language Learning:** Displays a random German word with its translation and difficulty level on the screen upon waking up.
+* **🌗 Smart Brightness:** Smooth display contrast transitions (sunrise/sunset) and a low-power night mode to prevent OLED coil whine.
+* **💾 Non-Volatile Memory:** All alarm configurations and settings are safely stored in flash memory using `Preferences` and persist through reboots.
+* **🔄 OTA Updates:** Supports Over-The-Air firmware updates over Wi-Fi without needing a USB cable.
+
+---
+
+## 🛠️ Hardware Requirements
+
 * **ESP32** (Main controller)
 * **OLED Display** 1.3" / 0.96" (I2C, SSD1306 / SH1106)
 * **DS3231** (Real-Time Clock module)
 * **JQ6500** (MP3 module with serial interface)
-* **Speaker** (8Ω / 3W, connected directly to the JQ6500 built-in amplifier)
+* **Speaker** (8$\Omega$ / 3W, connected directly to the JQ6500 built-in amplifier)
 * **5V Relay** (with optocoupler, for bedside light control)
-* Push button (to stop the alarm)
+* **Push button** (to stop the alarm or toggle the lamp)
+
+---
 
 ## 📦 Dependencies
+
 The following libraries are required to compile the project in the Arduino IDE:
 * `WiFi`, `WebServer`, `HTTPClient`, `ESPmDNS`, `Preferences` (Built into the ESP32 core)
-* [U8g2](https://github.com/olikraus/u8g2) (For OLED display)
-* [RTClib](https://github.com/adafruit/RTClib) (For the DS3231 RTC module)
-* [ArduinoJson](https://github.com/bblanchon/ArduinoJson) (For parsing weather and API data)
-* [JQ6500_Serial](https://github.com/sleemanj/JQ6500_Serial) (For the audio module)
+* **U8g2** (For OLED display rendering with Cyrillic support)
+* **RTClib** (For the DS3231 RTC module)
+* **ArduinoJson** (For parsing weather, train schedules, and API data)
+* **JQ6500_Serial** (For the audio playback module)
+
+---
 
 ## 🚀 Installation & Setup
 1. Clone the repository:
