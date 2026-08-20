@@ -69,9 +69,11 @@ The project includes a responsive Dark-Mode web interface served directly from t
 
 Developed for personal use and to explore IoT capabilities with the ESP32.
 
+<img width="2560" height="1441" alt="image" src="https://github.com/user-attachments/assets/7ea9e089-2909-443a-a0b5-0bb22fbc1f9a" />
+<img width="2560" height="1441" alt="image" src="https://github.com/user-attachments/assets/f613e1cb-6786-42eb-971d-5fd297ecd1eb" />
+<img width="2560" height="1441" alt="image" src="https://github.com/user-attachments/assets/116450a9-5230-4f53-8255-6529b47979c0" />
+<img width="1441" height="2560" alt="image" src="https://github.com/user-attachments/assets/ff8d1f87-184b-47aa-99c1-773bd743768d" />
 <img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/776719ba-2c34-4544-9769-c9aacfcef627" />
-<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/a929fffb-74a0-4db0-b26d-5c019abb2fcc" />
-<img width="721" height="1280" alt="image" src="https://github.com/user-attachments/assets/0aeced12-f1e5-4500-82fa-c868fdb0c974" />
 <img width="1280" height="994" alt="image" src="https://github.com/user-attachments/assets/0c3efc99-17d4-44af-8482-94735591d41d" />
 
 
