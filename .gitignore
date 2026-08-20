@@ -1,0 +1,8 @@
+Credentials.h
+server/config.php
+build/
+*.bin
+*.elf
+*.o
+*.map
+.vscode/
